@@ -18,15 +18,23 @@ Q90 = full_df.Q90
 Q95 = full_df.Q95
 OutBase = full_df.OutBase
 ino = full_df.InandOut
-PWN = full_df.PWN
+pwn = full_df.PWN
+ul = full_df.UpperLimit
+ml = full_df.MidLimit
+ll = full_df.LowerLimit
+sll = full_df.SeriousLowerLimit
 
 #Create ten days list
-def daytotenloop(Q90,Q95,OutBase,ino,PWN):
+def daytotenloop(Q90,Q95,OutBase,ino,pwn,ul,ml,ll,sll):
     Ten90=[]
     Ten95=[]
     out=[]
     inandout=[]
-    pwn=[]
+    tenpwn=[]
+    tenul=[]
+    tenml=[]
+    tenll=[]
+    tensll=[]
     
     for i in range(13):
         if i == 1:
@@ -42,10 +50,23 @@ def daytotenloop(Q90,Q95,OutBase,ino,PWN):
             inandout.append(sum(ino[0:10]))
             inandout.append(sum(ino[10:20]))
             inandout.append(sum(ino[20:31]))
-            pwn.append(sum(PWN[0:10]))
-            pwn.append(sum(PWN[10:20]))
-            pwn.append(sum(PWN[20:31]))
+            tenpwn.append(sum(pwn[0:10]))
+            tenpwn.append(sum(pwn[10:20]))
+            tenpwn.append(sum(pwn[20:31]))
+            tenul.append(sum(ul[0:10]))
+            tenul.append(sum(ul[10:20]))
+            tenul.append(sum(ul[20:31]))
+            tenml.append(sum(ml[0:10]))
+            tenml.append(sum(ml[10:20]))
+            tenml.append(sum(ml[20:31]))
+            tenll.append(sum(ll[0:10]))
+            tenll.append(sum(ll[10:20]))
+            tenll.append(sum(ll[20:31]))
+            tensll.append(sum(sll[0:10]))
+            tensll.append(sum(sll[10:20]))
+            tensll.append(sum(sll[20:31]))
         elif i==2:
+            a=31;b=41;c=51;d=59
             Ten90.append(sum(Q90[31:41]))
             Ten90.append(sum(Q90[41:51]))
             Ten90.append(sum(Q90[51:59]))
@@ -58,10 +79,23 @@ def daytotenloop(Q90,Q95,OutBase,ino,PWN):
             inandout.append(sum(ino[31:41]))
             inandout.append(sum(ino[41:51]))
             inandout.append(sum(ino[51:59]))
-            pwn.append(sum(PWN[31:41]))
-            pwn.append(sum(PWN[41:51]))
-            pwn.append(sum(PWN[51:59]))
+            tenpwn.append(sum(pwn[31:41]))
+            tenpwn.append(sum(pwn[41:51]))
+            tenpwn.append(sum(pwn[51:59]))
+            tenul.append(sum(ul[a:b]))
+            tenul.append(sum(ul[b:c]))
+            tenul.append(sum(ul[c:d]))
+            tenml.append(sum(ml[a:b]))
+            tenml.append(sum(ml[b:c]))
+            tenml.append(sum(ml[c:d]))
+            tenll.append(sum(ll[a:b]))
+            tenll.append(sum(ll[b:c]))
+            tenll.append(sum(ll[c:d]))
+            tensll.append(sum(sll[a:b]))
+            tensll.append(sum(sll[b:c]))
+            tensll.append(sum(sll[c:d]))
         elif i==3:
+            a=59;b=69;c=79;d=90;
             Ten90.append(sum(Q90[59:69]))
             Ten90.append(sum(Q90[69:79]))
             Ten90.append(sum(Q90[79:90]))
@@ -74,10 +108,23 @@ def daytotenloop(Q90,Q95,OutBase,ino,PWN):
             inandout.append(sum(ino[59:69]))
             inandout.append(sum(ino[69:79]))
             inandout.append(sum(ino[79:90]))
-            pwn.append(sum(PWN[59:69]))
-            pwn.append(sum(PWN[69:79]))
-            pwn.append(sum(PWN[79:90]))
+            tenpwn.append(sum(pwn[59:69]))
+            tenpwn.append(sum(pwn[69:79]))
+            tenpwn.append(sum(pwn[79:90]))
+            tenul.append(sum(ul[a:b]))
+            tenul.append(sum(ul[b:c]))
+            tenul.append(sum(ul[c:d]))
+            tenml.append(sum(ml[a:b]))
+            tenml.append(sum(ml[b:c]))
+            tenml.append(sum(ml[c:d]))
+            tenll.append(sum(ll[a:b]))
+            tenll.append(sum(ll[b:c]))
+            tenll.append(sum(ll[c:d]))
+            tensll.append(sum(sll[a:b]))
+            tensll.append(sum(sll[b:c]))
+            tensll.append(sum(sll[c:d]))
         elif i==4:
+            a=90;b=100;c=110;d=120;
             Ten90.append(sum(Q90[90:100]))
             Ten90.append(sum(Q90[100:110]))
             Ten90.append(sum(Q90[110:120]))
@@ -90,10 +137,23 @@ def daytotenloop(Q90,Q95,OutBase,ino,PWN):
             inandout.append(sum(ino[90:100]))
             inandout.append(sum(ino[100:110]))
             inandout.append(sum(ino[110:120]))
-            pwn.append(sum(PWN[90:100]))
-            pwn.append(sum(PWN[100:110]))
-            pwn.append(sum(PWN[110:120]))
+            tenpwn.append(sum(pwn[90:100]))
+            tenpwn.append(sum(pwn[100:110]))
+            tenpwn.append(sum(pwn[110:120]))
+            tenul.append(sum(ul[a:b]))
+            tenul.append(sum(ul[b:c]))
+            tenul.append(sum(ul[c:d]))
+            tenml.append(sum(ml[a:b]))
+            tenml.append(sum(ml[b:c]))
+            tenml.append(sum(ml[c:d]))
+            tenll.append(sum(ll[a:b]))
+            tenll.append(sum(ll[b:c]))
+            tenll.append(sum(ll[c:d]))
+            tensll.append(sum(sll[a:b]))
+            tensll.append(sum(sll[b:c]))
+            tensll.append(sum(sll[c:d]))
         elif i==5:
+            a=120;b=130;c=140;d=151;
             Ten90.append(sum(Q90[120:130]))
             Ten90.append(sum(Q90[130:140]))
             Ten90.append(sum(Q90[140:151]))
@@ -106,10 +166,23 @@ def daytotenloop(Q90,Q95,OutBase,ino,PWN):
             inandout.append(sum(ino[120:130]))
             inandout.append(sum(ino[130:140]))
             inandout.append(sum(ino[140:151]))
-            pwn.append(sum(PWN[120:130]))
-            pwn.append(sum(PWN[130:140]))
-            pwn.append(sum(PWN[140:151]))
+            tenpwn.append(sum(pwn[120:130]))
+            tenpwn.append(sum(pwn[130:140]))
+            tenpwn.append(sum(pwn[140:151]))
+            tenul.append(sum(ul[a:b]))
+            tenul.append(sum(ul[b:c]))
+            tenul.append(sum(ul[c:d]))
+            tenml.append(sum(ml[a:b]))
+            tenml.append(sum(ml[b:c]))
+            tenml.append(sum(ml[c:d]))
+            tenll.append(sum(ll[a:b]))
+            tenll.append(sum(ll[b:c]))
+            tenll.append(sum(ll[c:d]))
+            tensll.append(sum(sll[a:b]))
+            tensll.append(sum(sll[b:c]))
+            tensll.append(sum(sll[c:d]))
         elif i==6:
+            a=151;b=161;c=171;d=181;
             Ten90.append(sum(Q90[151:161]))
             Ten90.append(sum(Q90[161:171]))
             Ten90.append(sum(Q90[171:181]))
@@ -122,10 +195,23 @@ def daytotenloop(Q90,Q95,OutBase,ino,PWN):
             inandout.append(sum(ino[151:161]))
             inandout.append(sum(ino[161:171]))
             inandout.append(sum(ino[171:181]))
-            pwn.append(sum(PWN[151:161]))
-            pwn.append(sum(PWN[161:171]))
-            pwn.append(sum(PWN[171:181]))
+            tenpwn.append(sum(pwn[151:161]))
+            tenpwn.append(sum(pwn[161:171]))
+            tenpwn.append(sum(pwn[171:181]))
+            tenul.append(sum(ul[a:b]))
+            tenul.append(sum(ul[b:c]))
+            tenul.append(sum(ul[c:d]))
+            tenml.append(sum(ml[a:b]))
+            tenml.append(sum(ml[b:c]))
+            tenml.append(sum(ml[c:d]))
+            tenll.append(sum(ll[a:b]))
+            tenll.append(sum(ll[b:c]))
+            tenll.append(sum(ll[c:d]))
+            tensll.append(sum(sll[a:b]))
+            tensll.append(sum(sll[b:c]))
+            tensll.append(sum(sll[c:d]))
         elif i==7:
+            a=181;b=191;c=201;d=212;
             Ten90.append(sum(Q90[181:191]))
             Ten90.append(sum(Q90[191:201]))
             Ten90.append(sum(Q90[201:212]))
@@ -138,10 +224,23 @@ def daytotenloop(Q90,Q95,OutBase,ino,PWN):
             inandout.append(sum(ino[181:191]))
             inandout.append(sum(ino[191:201]))
             inandout.append(sum(ino[201:212]))
-            pwn.append(sum(PWN[181:191]))
-            pwn.append(sum(PWN[191:201]))
-            pwn.append(sum(PWN[201:212]))
+            tenpwn.append(sum(pwn[181:191]))
+            tenpwn.append(sum(pwn[191:201]))
+            tenpwn.append(sum(pwn[201:212]))
+            tenul.append(sum(ul[a:b]))
+            tenul.append(sum(ul[b:c]))
+            tenul.append(sum(ul[c:d]))
+            tenml.append(sum(ml[a:b]))
+            tenml.append(sum(ml[b:c]))
+            tenml.append(sum(ml[c:d]))
+            tenll.append(sum(ll[a:b]))
+            tenll.append(sum(ll[b:c]))
+            tenll.append(sum(ll[c:d]))
+            tensll.append(sum(sll[a:b]))
+            tensll.append(sum(sll[b:c]))
+            tensll.append(sum(sll[c:d]))
         elif i==8:
+            a=212;b=222;c=232;d=243;
             Ten90.append(sum(Q90[212:222]))
             Ten90.append(sum(Q90[222:232]))
             Ten90.append(sum(Q90[232:243]))
@@ -154,10 +253,23 @@ def daytotenloop(Q90,Q95,OutBase,ino,PWN):
             inandout.append(sum(ino[212:222]))
             inandout.append(sum(ino[222:232]))
             inandout.append(sum(ino[232:243]))
-            pwn.append(sum(PWN[212:222]))
-            pwn.append(sum(PWN[222:232]))
-            pwn.append(sum(PWN[232:243]))
+            tenpwn.append(sum(pwn[212:222]))
+            tenpwn.append(sum(pwn[222:232]))
+            tenpwn.append(sum(pwn[232:243]))
+            tenul.append(sum(ul[a:b]))
+            tenul.append(sum(ul[b:c]))
+            tenul.append(sum(ul[c:d]))
+            tenml.append(sum(ml[a:b]))
+            tenml.append(sum(ml[b:c]))
+            tenml.append(sum(ml[c:d]))
+            tenll.append(sum(ll[a:b]))
+            tenll.append(sum(ll[b:c]))
+            tenll.append(sum(ll[c:d]))
+            tensll.append(sum(sll[a:b]))
+            tensll.append(sum(sll[b:c]))
+            tensll.append(sum(sll[c:d]))
         elif i==9:
+            a=243;b=253;c=263;d=273;
             Ten90.append(sum(Q90[243:253]))
             Ten90.append(sum(Q90[253:263]))
             Ten90.append(sum(Q90[263:273]))
@@ -170,10 +282,23 @@ def daytotenloop(Q90,Q95,OutBase,ino,PWN):
             inandout.append(sum(ino[243:253]))
             inandout.append(sum(ino[253:263]))
             inandout.append(sum(ino[263:273]))
-            pwn.append(sum(PWN[243:253]))
-            pwn.append(sum(PWN[253:263]))
-            pwn.append(sum(PWN[263:273]))
+            tenpwn.append(sum(pwn[243:253]))
+            tenpwn.append(sum(pwn[253:263]))
+            tenpwn.append(sum(pwn[263:273]))
+            tenul.append(sum(ul[a:b]))
+            tenul.append(sum(ul[b:c]))
+            tenul.append(sum(ul[c:d]))
+            tenml.append(sum(ml[a:b]))
+            tenml.append(sum(ml[b:c]))
+            tenml.append(sum(ml[c:d]))
+            tenll.append(sum(ll[a:b]))
+            tenll.append(sum(ll[b:c]))
+            tenll.append(sum(ll[c:d]))
+            tensll.append(sum(sll[a:b]))
+            tensll.append(sum(sll[b:c]))
+            tensll.append(sum(sll[c:d]))
         elif i==10:
+            a=273;b=283;c=293;d=304;
             Ten90.append(sum(Q90[273:283]))
             Ten90.append(sum(Q90[283:293]))
             Ten90.append(sum(Q90[293:304]))
@@ -186,10 +311,23 @@ def daytotenloop(Q90,Q95,OutBase,ino,PWN):
             inandout.append(sum(ino[273:283]))
             inandout.append(sum(ino[283:293]))
             inandout.append(sum(ino[293:304]))
-            pwn.append(sum(PWN[273:283]))
-            pwn.append(sum(PWN[283:293]))
-            pwn.append(sum(PWN[293:304]))
+            tenpwn.append(sum(pwn[273:283]))
+            tenpwn.append(sum(pwn[283:293]))
+            tenpwn.append(sum(pwn[293:304]))
+            tenul.append(sum(ul[a:b]))
+            tenul.append(sum(ul[b:c]))
+            tenul.append(sum(ul[c:d]))
+            tenml.append(sum(ml[a:b]))
+            tenml.append(sum(ml[b:c]))
+            tenml.append(sum(ml[c:d]))
+            tenll.append(sum(ll[a:b]))
+            tenll.append(sum(ll[b:c]))
+            tenll.append(sum(ll[c:d]))
+            tensll.append(sum(sll[a:b]))
+            tensll.append(sum(sll[b:c]))
+            tensll.append(sum(sll[c:d]))
         elif i==11:
+            a=304;b=314;c=324;d=334;
             Ten90.append(sum(Q90[304:314]))
             Ten90.append(sum(Q90[314:324]))
             Ten90.append(sum(Q90[324:334]))
@@ -202,10 +340,23 @@ def daytotenloop(Q90,Q95,OutBase,ino,PWN):
             inandout.append(sum(ino[304:314]))
             inandout.append(sum(ino[314:324]))
             inandout.append(sum(ino[324:334]))
-            pwn.append(sum(PWN[304:314]))
-            pwn.append(sum(PWN[314:324]))
-            pwn.append(sum(PWN[324:334]))
+            tenpwn.append(sum(pwn[304:314]))
+            tenpwn.append(sum(pwn[314:324]))
+            tenpwn.append(sum(pwn[324:334]))
+            tenul.append(sum(ul[a:b]))
+            tenul.append(sum(ul[b:c]))
+            tenul.append(sum(ul[c:d]))
+            tenml.append(sum(ml[a:b]))
+            tenml.append(sum(ml[b:c]))
+            tenml.append(sum(ml[c:d]))
+            tenll.append(sum(ll[a:b]))
+            tenll.append(sum(ll[b:c]))
+            tenll.append(sum(ll[c:d]))
+            tensll.append(sum(sll[a:b]))
+            tensll.append(sum(sll[b:c]))
+            tensll.append(sum(sll[c:d]))
         elif i==12:
+            a=334;b=344;c=354;d=365;
             Ten90.append(sum(Q90[334:344]))
             Ten90.append(sum(Q90[344:354]))
             Ten90.append(sum(Q90[354:365]))
@@ -218,12 +369,24 @@ def daytotenloop(Q90,Q95,OutBase,ino,PWN):
             inandout.append(sum(ino[334:344]))
             inandout.append(sum(ino[344:354]))
             inandout.append(sum(ino[354:365]))
-            pwn.append(sum(PWN[334:344]))
-            pwn.append(sum(PWN[344:354]))
-            pwn.append(sum(PWN[354:365]))
-    return Ten90,Ten95,out,inandout,pwn
+            tenpwn.append(sum(pwn[334:344]))
+            tenpwn.append(sum(pwn[344:354]))
+            tenpwn.append(sum(pwn[354:365]))
+            tenul.append(sum(ul[a:b]))
+            tenul.append(sum(ul[b:c]))
+            tenul.append(sum(ul[c:d]))
+            tenml.append(sum(ml[a:b]))
+            tenml.append(sum(ml[b:c]))
+            tenml.append(sum(ml[c:d]))
+            tenll.append(sum(ll[a:b]))
+            tenll.append(sum(ll[b:c]))
+            tenll.append(sum(ll[c:d]))
+            tensll.append(sum(sll[a:b]))
+            tensll.append(sum(sll[b:c]))
+            tensll.append(sum(sll[c:d]))
+    return Ten90,Ten95,out,inandout,tenpwn,tenul,tenml,tenll,tensll
 
-cor_df = daytotenloop(Q90,Q95,OutBase,ino,PWN)
+cor_df = daytotenloop(Q90,Q95,OutBase,ino,pwn,ul,ml,ll,sll)
 
 #cor_df = [Ten90,Ten95,out,inandout,pwn]
 #output_csv = 'output.csv'
@@ -308,12 +471,14 @@ PeoplesLivelihoodWater_29,PeoplesLivelihoodWater_30,PeoplesLivelihoodWater_31,\
 PeoplesLivelihoodWater_32,PeoplesLivelihoodWater_33,PeoplesLivelihoodWater_34,\
 PeoplesLivelihoodWater_35,PeoplesLivelihoodWater_36) values ("+insertpwn+");"
 
-print('successfully import csv file to mysql!')
 #outbase table is not created
 cursor.execute(sql90)
 cursor.execute(sql95)
 cursor.execute(sqlinandout)
 cursor.execute(sqlpwn)
+
+print('successfully import csv file to mysql!')
+
 
 conn.commit()
 
