@@ -424,11 +424,27 @@ insert95 = '\"' + '\",\"'.join(map(str, ten95)) + '\"'
 insertout = '\"' + '\",\"'.join(map(str, out)) + '\"'
 insertinandout = '\"' + '\",\"'.join(map(str, inandout)) + '\"'
 insertpwn = '\"' + '\",\"'.join(map(str, pwn)) + '\"'
-
 #print('Q90 = '+insert90)
 #print('Q95 = '+insert95)
 #print('In and out = '+insertinandout)
 #print('pwn = '+insertpwn)
+
+#insert rule curve
+for i in range(36):
+    tenul=cor_df[5][i]
+    tenml=cor_df[6][i]
+    tenll=cor_df[7][i]
+    tensll=cor_df[8][i]
+    inserttenday_no=str(i+1)
+    inserttenul='\"'+ str(tenul) + '\"'
+    inserttenml='\"'+ str(tenml) + '\"'
+    inserttenll='\"'+ str(tenll) + '\"'
+    inserttensll='\"'+ str(tensll) + '\"'
+    sqlrulecurve="insert into RuleCurve (TenDays_No,UpperLimit,MidLimit,LowerLimit,SeriousLowerLimit) values ("+inserttenday_no+','+inserttenul+','+inserttenml+','+inserttenll+','+inserttensll+");"
+    cursor.execute(sqlrulecurve)
+    #print('i='+str(i)+' ul='+inserttenul+' ml='+inserttenml+' ll='+inserttenll+' sll='+inserttensll+'\n')
+
+
 
 #insert to DB
 sql90 = "INSERT INTO Q90 (Ten_1, Ten_2, Ten_3, Ten_4, Ten_5, Ten_6, Ten_7, \
@@ -471,6 +487,9 @@ PeoplesLivelihoodWater_29,PeoplesLivelihoodWater_30,PeoplesLivelihoodWater_31,\
 PeoplesLivelihoodWater_32,PeoplesLivelihoodWater_33,PeoplesLivelihoodWater_34,\
 PeoplesLivelihoodWater_35,PeoplesLivelihoodWater_36) values ("+insertpwn+");"
 
+sqlrulecurve = "insert into RuleCurve (TenDays_No,UpperLimit,MidLimit,\
+LowerLimit,SeriousLowerLimit) values (1,1,2,3,4,5);"
+
 #outbase table is not created
 cursor.execute(sql90)
 cursor.execute(sql95)
@@ -478,7 +497,6 @@ cursor.execute(sqlinandout)
 cursor.execute(sqlpwn)
 
 print('successfully import csv file to mysql!')
-
 
 conn.commit()
 
