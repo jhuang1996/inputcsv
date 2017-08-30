@@ -10,6 +10,9 @@ Day to ten section
 '''
 import pandas as pd
 import csv
+import sys
+sys.path.append("/home/drfuser/prototype-demo/")
+from  dbhelper import dbuser_connect
 
 input_csv = 'ten.csv'
 full_df = pd.read_csv(input_csv, sep=',', skipinitialspace = True)
@@ -398,19 +401,7 @@ with open('output.csv', 'w') as f:
 '''
 DB section
 '''
-import MySQLdb
-import MySQLdb.cursors
-try:
-    conn = MySQLdb.connect(host='localhost',
-                            user='demouser',
-                            passwd='demo1234',
-                            db='demo',
-                            charset='utf8')
-    print("Connect to mysql through demouser.")
-except:
-    print("Can't Connect Database via demouser: ", sys.exc_info()[0])
-    sys.exit()
-    
+conn = dbuser_connect()   
 cursor = conn.cursor()  
 
 #insert into database
@@ -459,6 +450,8 @@ Ten_18, Ten_19, Ten_20, Ten_21, Ten_22, Ten_23, Ten_24, Ten_25, Ten_26, Ten_27,\
 Ten_28, Ten_29, Ten_30, Ten_31, Ten_32, Ten_33, Ten_34, Ten_35, Ten_36) values \
 ("+insert95+");"
 
+sqlout="INSERT INTO ReservedWater (ReservedWater_1,ReservedWater_2,ReservedWater_3,ReservedWater_4,ReservedWater_5,ReservedWater_6,ReservedWater_7,ReservedWater_8,ReservedWater_9,ReservedWater_10,ReservedWater_11,ReservedWater_12,ReservedWater_13,ReservedWater_14,ReservedWater_15,ReservedWater_16,ReservedWater_17,ReservedWater_18,ReservedWater_19,ReservedWater_20,ReservedWater_21,ReservedWater_22,ReservedWater_23,ReservedWater_24,ReservedWater_25,ReservedWater_26,ReservedWater_27,ReservedWater_28,ReservedWater_29,ReservedWater_30,ReservedWater_31,ReservedWater_32,ReservedWater_33,ReservedWater_34,ReservedWater_35,ReservedWater_36) VALUES ("+insertout+");"
+
 sqlinandout = "INSERT INTO IrrigationWaterDemand (IrrigationWaterDemand_1,\
 IrrigationWaterDemand_2,IrrigationWaterDemand_3,IrrigationWaterDemand_4,\
 IrrigationWaterDemand_5,IrrigationWaterDemand_6,IrrigationWaterDemand_7,\
@@ -493,6 +486,7 @@ LowerLimit,SeriousLowerLimit) values (1,1,2,3,4,5);"
 #outbase table is not created
 cursor.execute(sql90)
 cursor.execute(sql95)
+cursor.execute(sqlout)
 cursor.execute(sqlinandout)
 cursor.execute(sqlpwn)
 
